@@ -4,12 +4,15 @@
   "description": "Boilerplate",
   "scripts": {
     "security-check": "nsp check",
-    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch",
+    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch start-mockapi",
     "open:src": "babel-node server/index.js",
     "lint": "esw build/webpack/webpack.config.dev.* app build --color",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress build/tests/index.js \"app/**/*.test.js\"",
-    "test:watch": "npm run test -- --watch"
+    "test:watch": "npm run test -- --watch",
+    "generate-mock-data": "babel-node server/api/data",
+    "prestart-mockapi": "npm run generate-mock-data",
+    "start-mockapi": "json-server --watch server/api/db.json --port 3001"
   },
   "repository": {
     "type": "git",
@@ -39,7 +42,10 @@
     "eslint-plugin-react": "^6.6.0",
     "eslint-watch": "^2.1.14",
     "jsdom": "^9.8.3",
+    "json-schema-faker": "^0.3.7",
+    "json-server": "^0.9.0",
     "mocha": "^3.1.2",
+    "nock": "^9.0.2",
     "npm-run-all": "^3.1.1",
     "nsp": "^2.6.2",
     "open": "0.0.5",
