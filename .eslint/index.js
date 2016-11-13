@@ -25,6 +25,7 @@ module.exports = {
         quotes: [2, 'single'],
         indent: [2, 4],
         'no-console': 1,
-        'max-length': 0
+        'max-length': 0,
+        'comma-dangle': 0
     }
 };

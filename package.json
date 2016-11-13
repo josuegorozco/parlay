@@ -4,8 +4,10 @@
   "description": "Boilerplate",
   "scripts": {
     "security-check": "nsp check",
-    "start": "npm-run-all --parallel security-check open:src",
+    "start": "npm-run-all --parallel security-check open:src lint:watch",
     "open:src": "babel-node server/index.js",
+    "lint": "esw build/webpack/webpack.config.dev.* app build --color",
+    "lint:watch": "npm run lint -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -32,8 +34,13 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.1",
     "eslint-plugin-react": "^6.6.0",
+    "eslint-watch": "^2.1.14",
     "npm-run-all": "^3.1.1",
     "nsp": "^2.6.2",
-    "open": "0.0.5"
+    "open": "0.0.5",
+    "webpack": "^1.13.3",
+    "webpack-dev-middleware": "^1.8.4",
+    "webpack-hot-middleware": "^2.13.2",
+    "webpack-md5-hash": "0.0.5"
   }
 }
