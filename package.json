@@ -4,11 +4,12 @@
   "description": "Boilerplate",
   "scripts": {
     "security-check": "nsp check",
-    "start": "npm-run-all --parallel security-check open:src lint:watch",
+    "start": "npm-run-all --parallel security-check open:src lint:watch test:watch",
     "open:src": "babel-node server/index.js",
     "lint": "esw build/webpack/webpack.config.dev.* app build --color",
     "lint:watch": "npm run lint -- --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --reporter progress build/tests/index.js \"app/**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
   },
   "repository": {
     "type": "git",
@@ -29,12 +30,16 @@
     "babel-loader": "^6.2.7",
     "babel-preset-latest": "^6.16.0",
     "babel-register": "^6.18.0",
+    "chai": "^3.5.0",
+    "cheerio": "^0.22.0",
     "eslint": "^3.10.0",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.1",
     "eslint-plugin-react": "^6.6.0",
     "eslint-watch": "^2.1.14",
+    "jsdom": "^9.8.3",
+    "mocha": "^3.1.2",
     "npm-run-all": "^3.1.1",
     "nsp": "^2.6.2",
     "open": "0.0.5",
