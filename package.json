@@ -1,0 +1,25 @@
+{
+  "name": "parlay",
+  "version": "1.0.0",
+  "description": "Boilerplate",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josuegorozco/parlay.git"
+  },
+  "author": "Josue Orozco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/josuegorozco/parlay/issues"
+  },
+  "homepage": "https://github.com/josuegorozco/parlay#readme",
+  "devDependencies": {
+    "eslint": "^3.10.0",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^3.0.1",
+    "eslint-plugin-react": "^6.6.0"
+  }
+}
