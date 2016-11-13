@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Boilerplate",
   "scripts": {
+    "security-check": "nsp check",
+    "start": "npm-run-all --parallel security-check open:src",
+    "open:src": "babel-node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,11 +18,22 @@
     "url": "https://github.com/josuegorozco/parlay/issues"
   },
   "homepage": "https://github.com/josuegorozco/parlay#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
   "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-latest": "^6.16.0",
+    "babel-register": "^6.18.0",
     "eslint": "^3.10.0",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.1",
-    "eslint-plugin-react": "^6.6.0"
+    "eslint-plugin-react": "^6.6.0",
+    "npm-run-all": "^3.1.1",
+    "nsp": "^2.6.2",
+    "open": "0.0.5"
   }
 }
