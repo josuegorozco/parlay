@@ -21,7 +21,6 @@ export default webpackBase({
     entry,
     output: {
         path: path.resolve(rootPath, 'dist'),
-        publicPath: '/',
         filename: '[name].[chunkhash].js'
     },
     plugins: plugins(true)

@@ -1,4 +1,8 @@
 import css from './css';
+import fonts from './fonts';
+import images from './images';
+import json from './json';
+import video from './video';
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +21,9 @@ const js = {
 
 export default [
     js,
-    css
+    css,
+    fonts,
+    images,
+    json,
+    video
 ];

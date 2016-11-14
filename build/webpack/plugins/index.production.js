@@ -1,3 +1,4 @@
+import globals from './globals';
 import dedupe from './dedupe';
 import uglifyjs from './uglifyjs';
 import html from './html';
@@ -7,6 +8,7 @@ import css from './css';
 
 export default [
     md5hash,
+    globals,
     css,
     chunk,
     html(true),

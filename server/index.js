@@ -5,6 +5,8 @@ import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import config from '../build/webpack/webpack.config.dev';
 
+console.log('config => ', JSON.stringify(config, null, 4));
+
 const port = 3000;
 const app = express();
 const compiler = webpack(config);

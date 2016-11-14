@@ -12,5 +12,8 @@ import webpack from 'webpack';
 */
 
 export default new webpack.optimize.CommonsChunkPlugin({
-    name: 'vendor'
+    name: 'vendor',
+    children: true,
+    minChunks: 2,
+    async: true
 });
