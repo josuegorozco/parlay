@@ -1,0 +1,38 @@
+import React from 'react';
+{{#if wantCSS}}
+import classNames from 'classnames';
+{{/if}}
+{{#if wantMessages}}
+import { FormattedMessage } from 'react-intl';
+import messages from './messages';
+{{/if}}
+{{#if wantCSS}}
+import styles from './styles.scss';
+{{/if}}
+
+/*
+|--------------------------------------------------------------------------
+| {{ properCase name }}
+|--------------------------------------------------------------------------
+|
+| ES6 React Component.
+|
+*/
+
+class {{ properCase name }} extends React.Component { // eslint-disable-line react/prefer-stateless-function
+    render() {
+        return (
+            {{#if wantCSS}}
+            <div className={{curly true}}classNames(styles.{{ camelCase name }}){{curly}}>
+            {{else}}
+            <div>
+            {{/if}}
+            {{#if wantMessages}}
+                <FormattedMessage {...messages.header} />
+            {{/if}}
+            </div>
+        );
+    }
+}
+
+export default {{ properCase name }};
