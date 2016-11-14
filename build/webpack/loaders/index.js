@@ -16,7 +16,7 @@ import video from './video';
 const js = {
     test: /\.js$/,
     exclude: /node_modules/,
-    loaders: ['babel']
+    loaders: ['babel-loader']
 };
 
 export default [

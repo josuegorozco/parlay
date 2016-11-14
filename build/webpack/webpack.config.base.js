@@ -28,6 +28,5 @@ export default options => ({
     },
     plugins: options.plugins.concat(plugins),
     target: 'web',
-    noInfo: false,
     devtool: 'inline-source-map'
 });
