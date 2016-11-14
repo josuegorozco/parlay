@@ -20,7 +20,7 @@ import createRoutes from './routes';
 | This is the entry file for the application, only setup and boilerplate
 | code.
 |
-| Set initial state.
+| Lets start with initializing the state.
 |
 */
 
