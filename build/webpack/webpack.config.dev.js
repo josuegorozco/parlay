@@ -24,5 +24,8 @@ export default webpackBase({
         publicPath: '/',
         filename: '[name].chunk.js'
     },
-    plugins: plugins()
+    plugins: plugins(),
+    babelQuery: {
+        presets: ['react-hmre']
+    }
 });

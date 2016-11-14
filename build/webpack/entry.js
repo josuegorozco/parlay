@@ -11,7 +11,9 @@ import path from 'path';
 
 const rootPath = path.resolve(__dirname, '../../');
 
-export default {
-    vendor: path.resolve(rootPath, 'app/vendor'),
-    main: path.resolve(rootPath, 'app/index')
-};
+export default [
+    'eventsource-polyfill',
+    'webpack-hot-middleware/client',
+    path.resolve(rootPath, 'app/vendor.js'),
+    path.resolve(rootPath, 'app/app.js')
+];

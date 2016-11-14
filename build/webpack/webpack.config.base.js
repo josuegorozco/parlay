@@ -18,15 +18,22 @@ const rootPath = path.resolve(__dirname, '../../');
 
 export default options => ({
     entry: options.entry,
-    // output: options.output,
     output: Object.assign({
         path: path.resolve(rootPath, 'dist'),
         publicPath: '/'
     }, options.output),
     module: {
-        loaders: loaders.concat(options.module && options.module.loaders ? options.module.loaders : [])
+        loaders: [{
+            test: /\.js?$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader',
+            query: options.babelQuery
+        }].concat(loaders)
     },
     plugins: options.plugins.concat(plugins),
     target: 'web',
-    devtool: 'inline-source-map'
+    devtool: 'inline-source-map',
+    resolve: {
+        modules: ['app', 'node_modules']
+    }
 });
