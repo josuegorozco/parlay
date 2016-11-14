@@ -7,6 +7,7 @@
     "start": "npm-run-all --parallel security-check open:src lint:watch test:watch start-mockapi",
     "open:src": "cross-env NODE_ENV=development babel-node server/index.js",
     "lint": "esw build/webpack/webpack.config.dev.* app build --color --config \"./.eslintrc.js\"",
+    "lint:eslint": "eslint --ignore-path .gitignore",
     "lint:watch": "npm run lint -- --watch",
     "lint:staged": "lint-staged",
     "test": "mocha --reporter progress build/tests/index.js \"app/**/*.test.js\" --compilers js:babel-register --require babel-polyfill",
@@ -21,7 +22,7 @@
     "generate": "plop --plopfile build/generators/index.js"
   },
   "lint-staged": {
-    "*.js": "lint"
+    "*.js": "lint:eslint"
   },
   "pre-commit": "lint:staged",
   "repository": {
