@@ -4,6 +4,11 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <title>Parlay</title>
+
+        <% if (htmlWebpackPlugin.options.trackJSToken) { %>
+        <script>window._trackJs = {token: '<%= htmlWebpackPlugin.options.trackJSToken %>'};</script>
+        <script src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
+        <% } %>
     </head>
     <body>
         <div class="jumbotron">
@@ -19,6 +24,5 @@
                 <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
             </p>
         </div>
-        <script type="text/javascript" src="bundle.js"></script>
     </body>
 </html>

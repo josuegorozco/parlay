@@ -20,9 +20,9 @@ const rootPath = path.resolve(__dirname, '../../');
 export default webpackBase({
     entry,
     output: {
-        path: path.resolve(rootPath, 'app'),
+        path: path.resolve(rootPath, 'dist'),
         publicPath: '/',
-        filename: '[name].chunk.js'
+        filename: '[name].[chunkhash].js'
     },
-    plugins: plugins()
+    plugins: plugins(true)
 });
