@@ -26,6 +26,7 @@ export default webpackBase({
     },
     plugins: plugins(),
     babelQuery: {
-        presets: ['react-hmre']
+        presets: ['react-hmre'],
+        plugins: ['transform-runtime']
     }
 });

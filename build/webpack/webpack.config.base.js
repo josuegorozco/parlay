@@ -17,6 +17,7 @@ const rootPath = path.resolve(__dirname, '../../');
 // }}}
 
 export default options => ({
+    context: rootPath,
     entry: options.entry,
     output: Object.assign({
         path: path.resolve(rootPath, 'dist'),
@@ -24,9 +25,9 @@ export default options => ({
     }, options.output),
     module: {
         loaders: [{
-            test: /\.js?$/,
-            exclude: /node_modules/,
+            test: /\.jsx?$/,
             loader: 'babel-loader',
+            exclude: /node_modules/,
             query: options.babelQuery
         }].concat(loaders)
     },
