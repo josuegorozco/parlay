@@ -1,21 +1,22 @@
 import React from 'react';
+import classNames from 'classnames';
 import styles from './styles.scss';
 
 /*
 |--------------------------------------------------------------------------
-| Navbar
+| Footer
 |--------------------------------------------------------------------------
 |
 | Stateless component
 |
 */
 
-function Navbar() {
+function Footer() {
     return (
-        <div className={styles.navbar}>
-            Navbar
+        <div className={classNames(styles.footer)}>
+            Footer
         </div>
     );
 }
 
-export default Navbar;
+export default Footer;

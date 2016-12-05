@@ -1,5 +1,6 @@
 import React from 'react';
 import NavbarContainer from '../NavbarContainer';
+import FooterContainer from '../FooterContainer';
 
 /**
  *
@@ -25,6 +26,7 @@ export default class App extends React.Component { // eslint-disable-line react/
             <div>
                 <NavbarContainer />
                 {React.Children.toArray(this.props.children)}
+                <FooterContainer />
             </div>
         );
     }
