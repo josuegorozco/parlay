@@ -1,6 +1,7 @@
 module.exports = {
     root: true,
+    parser: 'babel-eslint',
     extends: [
-        './.eslint/index'
-    ].map(require.resolve)
+        './.eslint/index.js',
+    ]
 };
