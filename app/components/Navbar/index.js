@@ -10,12 +10,21 @@ import styles from './styles.scss';
 |
 */
 
-function Navbar() {
+function Navbar({ topics }) {
     return (
         <div className={styles.navbar}>
-            Navbar
+            Navbar - with {topics.length} topics.
         </div>
     );
 }
+
+Navbar.propTypes = {
+    topics: React.PropTypes.arrayOf(
+        React.PropTypes.shape({
+            name: React.PropTypes.string.isRequired,
+            descriptin: React.PropTypes.string.isRequired,
+        })
+    ).isRequired,
+};
 
 export default Navbar;
