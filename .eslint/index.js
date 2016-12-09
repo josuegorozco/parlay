@@ -38,7 +38,7 @@ module.exports = {
                 parameters: 2
             }
         }],
-        'comma-dangle': [2, 'never'],
+        'comma-dangle': [2, 'always-multiline'],
         'class-methods-use-this': 0,
         'require-yield': 0,
         'no-console': 1,

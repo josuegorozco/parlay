@@ -9,5 +9,5 @@ export default [
     fonts,
     images,
     json,
-    video
+    video,
 ];

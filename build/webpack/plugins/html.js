@@ -14,6 +14,6 @@ export default isProduction => (new HtmlWebpackPlugin({
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
-        minifyURLS: true
-    }
+        minifyURLS: true,
+    },
 }));

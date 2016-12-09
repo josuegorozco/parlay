@@ -46,7 +46,7 @@ export default function createRoutes(store) {
     // Create reusable async injectors using getAsyncInjectors factory
     const {
         injectReducer,
-        injectSagas
+        injectSagas,
     } = getAsyncInjectors(store); // eslint-disable-line no-unused-vars
 
     return [{
@@ -56,7 +56,7 @@ export default function createRoutes(store) {
             const importModules = Promise.all([
                 System.import('containers/HomePage'),
                 System.import('containers/NavbarContainer/reducer'),
-                System.import('containers/NavbarContainer/sagas')
+                System.import('containers/NavbarContainer/sagas'),
             ]);
 
             const renderRoute = loadModule(cb);
@@ -68,7 +68,7 @@ export default function createRoutes(store) {
             });
 
             importModules.catch(errorLoading);
-        }
+        },
     }, {
         path: '*',
         name: 'notfound',
@@ -76,6 +76,6 @@ export default function createRoutes(store) {
             System.import('containers/NotFoundPage')
                 .then(loadModule(cb))
                 .catch(errorLoading);
-        }
+        },
     }];
 }

@@ -6,5 +6,5 @@ export default [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     css,
-    html()
+    html(),
 ];

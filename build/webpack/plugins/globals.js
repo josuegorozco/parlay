@@ -12,7 +12,7 @@ import webpack from 'webpack';
 
 const GLOBALS = {
     'process.env.NODE_ENV': JSON.stringify('production'),
-    __DEV__: false
+    __DEV__: false,
 };
 
 export default new webpack.DefinePlugin(GLOBALS);

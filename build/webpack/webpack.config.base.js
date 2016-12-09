@@ -21,20 +21,20 @@ export default options => ({
     entry: options.entry,
     output: Object.assign({
         path: path.resolve(rootPath, 'dist'),
-        publicPath: '/'
+        publicPath: '/',
     }, options.output),
     module: {
         loaders: [{
             test: /\.jsx?$/,
             loader: 'babel-loader',
             exclude: /node_modules/,
-            query: options.babelQuery
-        }].concat(loaders)
+            query: options.babelQuery,
+        }].concat(loaders),
     },
     plugins: options.plugins.concat(plugins),
     target: 'web',
     devtool: 'inline-source-map',
     resolve: {
-        modules: ['app', 'node_modules']
-    }
+        modules: ['app', 'node_modules'],
+    },
 });

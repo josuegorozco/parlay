@@ -3,7 +3,7 @@ import {
     isEmpty,
     isFunction,
     isObject,
-    isString
+    isString,
 } from 'lodash';
 import invariant from 'invariant';
 import warning from 'warning';
@@ -20,7 +20,7 @@ export function checkStore(store) {
         replaceReducer: isFunction,
         runSaga: isFunction,
         asyncReducers: isObject,
-        asyncSagas: isObject
+        asyncSagas: isObject,
     };
     invariant(
         conformsTo(store, shape),
@@ -80,6 +80,6 @@ export function getAsyncInjectors(store) {
 
     return {
         injectReducer: injectAsyncReducer(store, true),
-        injectSagas: injectAsyncSagas(store, true)
+        injectSagas: injectAsyncSagas(store, true),
     };
 }

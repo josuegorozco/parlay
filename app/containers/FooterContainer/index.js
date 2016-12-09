@@ -28,7 +28,7 @@ export class FooterContainer extends React.Component { // eslint-disable-line re
  */
 function mapDispatchToProps(dispatch) {
     return {
-        dispatch
+        dispatch,
     };
 }
 

@@ -9,5 +9,5 @@ export default [
     globals,
     css,
     html(true),
-    uglifyjs
+    uglifyjs,
 ];

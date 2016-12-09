@@ -52,7 +52,7 @@ const store = configureStore(initialState, browserHistory);
 */
 
 const history = syncHistoryWithStore(browserHistory, store, {
-    selectLocationState: selectLocationState()
+    selectLocationState: selectLocationState(),
 });
 
 
@@ -67,7 +67,7 @@ const history = syncHistoryWithStore(browserHistory, store, {
 
 const rootRoute = {
     component: App,
-    childRoutes: createRoutes(store)
+    childRoutes: createRoutes(store),
 };
 
 /*
@@ -125,7 +125,7 @@ if (module.hot) {
 if (!window.Intl) {
     Promise.all([
         System.import('intl'),
-        System.import('intl/locale-data/jsonp/en.js')
+        System.import('intl/locale-data/jsonp/en.js'),
     ]).then(() => render(translationMessages));
 } else {
     render(translationMessages);

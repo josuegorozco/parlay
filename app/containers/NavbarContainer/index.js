@@ -30,7 +30,7 @@ const mapStateToProps = selectNavbarContainer();
  */
 function mapDispatchToProps(dispatch) {
     return {
-        dispatch
+        dispatch,
     };
 }
 
