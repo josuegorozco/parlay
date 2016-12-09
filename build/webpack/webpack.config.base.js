@@ -46,9 +46,7 @@ export default options => ({
             }),
         }].concat(loaders),
     },
-    plugins: [
-        new ExtractTextPlugin('styles.css'),
-    ].concat(options.plugins.concat(plugins)),
+    plugins: options.plugins.concat(plugins),
     target: 'web',
     devtool: (options.devtool || 'inline-source-map'),
     resolve: {
