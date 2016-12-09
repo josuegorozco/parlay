@@ -24,7 +24,10 @@
     "build": "cross-env NODE_ENV=production babel-node build/index.js",
     "postbuild": "npm-run-all build:server serve:dist",
     "build:server": "babel server/production.js -o dist/server.js",
-    "generate": "plop --plopfile build/generators/index.js"
+    "generate": "plop --plopfile build/generators/index.js",
+    "version:major": "npm version major",
+    "version:minor": "npm version minor",
+    "version:patch": "npm version patch"
   },
   "lint-staged": {
     "*.js": "lint:eslint"
