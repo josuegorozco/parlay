@@ -31,7 +31,7 @@ const selectNavbarContainerDomain = () => state => state.get('navbarContainer');
 
 const selectNavbarContainer = () => createSelector(
     selectNavbarContainerDomain(),
-    substate => substate.toJS()
+    substate => substate.toJS(),
 );
 
 /*

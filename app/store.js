@@ -2,8 +2,8 @@ import 'babel-polyfill';
 import { createStore, applyMiddleware, compose } from 'redux';
 import { fromJS } from 'immutable';
 import { routerMiddleware } from 'react-router-redux';
-// import createSagaMiddleware from 'redux-saga';
-import { default as createSagaMiddleware } from 'redux-saga';
+import createSagaMiddleware from 'redux-saga';
+// import { default as createSagaMiddleware } from 'redux-saga';
 import createReducer from './reducers';
 
 /**
@@ -19,14 +19,15 @@ import createReducer from './reducers';
 |
 */
 
-let sagaMiddleware = false;
+// let sagaMiddleware = false;
+//
+// try {
+//     sagaMiddleware = createSagaMiddleware();
+// } catch (e) {
+//     sagaMiddleware = createSagaMiddleware.default();
+// }
 
-try {
-    sagaMiddleware = createSagaMiddleware();
-} catch (e) {
-    sagaMiddleware = createSagaMiddleware.default();
-}
-// const sagaMiddleware = createSagaMiddleware();
+const sagaMiddleware = createSagaMiddleware();
 
 export default function configureStore(initialState = {}, history) {
     // Create the store with two middlewares

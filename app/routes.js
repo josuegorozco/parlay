@@ -49,15 +49,20 @@ export default function createRoutes(store) {
         injectSagas,
     } = getAsyncInjectors(store); // eslint-disable-line no-unused-vars
 
+    // ------------------------------------------------------
+    // Global modules
+    const globalModules = [
+        System.import('containers/NavbarContainer/reducer'),
+        System.import('containers/NavbarContainer/sagas'),
+    ];
+
     return [{
         path: '/',
         name: 'home',
         getComponent(nextState, cb) {
             const importModules = Promise.all([
                 System.import('containers/HomePage'),
-                System.import('containers/NavbarContainer/reducer'),
-                System.import('containers/NavbarContainer/sagas'),
-            ]);
+            ].concat(globalModules));
 
             const renderRoute = loadModule(cb);
 
@@ -73,9 +78,19 @@ export default function createRoutes(store) {
         path: '*',
         name: 'notfound',
         getComponent(nextState, cb) {
-            System.import('containers/NotFoundPage')
-                .then(loadModule(cb))
-                .catch(errorLoading);
+            const importModules = Promise.all([
+                System.import('containers/NotFoundPage'),
+            ].concat(globalModules));
+
+            const renderRoute = loadModule(cb);
+
+            importModules.then(([component, reducer, sagas]) => {
+                injectReducer('navbarContainer', reducer.default);
+                injectSagas('navbarContainer', sagas.default);
+                renderRoute(component);
+            });
+
+            importModules.catch(errorLoading);
         },
     }];
 }

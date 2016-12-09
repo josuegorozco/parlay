@@ -2,8 +2,16 @@
     path: '{{ path }}',
     name: '{{ camelCase component }}',
     getComponent(location, cb) {
-        System.import('{{{directory (properCase component)}}}')
-        .then(loadModule(cb))
-        .catch(errorLoading);
+        const importModules = Promise.all([
+            System.import('containers/{{ properCase component }}'),
+        ]);
+
+        const renderRoute = loadModule(cb);
+
+        importModules.then(([component]) => {
+            renderRoute(component);
+        });
+
+        importModules.catch(errorLoading);
     },
 },$1
