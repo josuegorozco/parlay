@@ -25,6 +25,7 @@ export default webpackBase({
         filename: '[name].chunk.js',
     },
     plugins: plugins(),
+    devtool: 'source-map',
     babelQuery: {
         presets: ['react-hmre'],
         plugins: ['transform-runtime'],

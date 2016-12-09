@@ -33,7 +33,7 @@ export default options => ({
     },
     plugins: options.plugins.concat(plugins),
     target: 'web',
-    devtool: 'inline-source-map',
+    devtool: (options.devtool || 'inline-source-map'),
     resolve: {
         modules: ['app', 'node_modules'],
     },
