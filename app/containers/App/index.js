@@ -1,5 +1,6 @@
 import React from 'react';
 import NavbarContainer from '../NavbarContainer';
+import FooterContainer from '../FooterContainer';
 
 /**
  *
@@ -17,7 +18,7 @@ import NavbarContainer from '../NavbarContainer';
 
 export default class App extends React.Component { // eslint-disable-line react/prefer-stateless-function
     static propTypes = {
-        children: React.PropTypes.node
+        children: React.PropTypes.node,
     };
 
     render() {
@@ -25,6 +26,7 @@ export default class App extends React.Component { // eslint-disable-line react/
             <div>
                 <NavbarContainer />
                 {React.Children.toArray(this.props.children)}
+                <FooterContainer />
             </div>
         );
     }

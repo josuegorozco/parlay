@@ -45,5 +45,5 @@ const selectNavbarContainer = () => createSelector(
 
 export default selectNavbarContainer;
 export {
-    selectNavbarContainerDomain
+    selectNavbarContainerDomain,
 };

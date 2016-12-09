@@ -2,7 +2,7 @@ import { addLocaleData } from 'react-intl'; /* eslint-disable no-restricted-synt
 import enLocaleData from 'react-intl/locale-data/en';
 import enTranslationMessages from './translations/en.json';
 import {
-    DEFAULT_LOCALE
+    DEFAULT_LOCALE,
 } from './containers/App/constants';
 
 /*
@@ -15,7 +15,7 @@ import {
 */
 
 export const appLocales = [
-    'en'
+    'en',
 ];
 
 addLocaleData(enLocaleData);
@@ -36,5 +36,5 @@ export const formatTranslationMessages = (locale, messages) => {
 };
 
 export const translationMessages = {
-    en: formatTranslationMessages('en', enTranslationMessages)
+    en: formatTranslationMessages('en', enTranslationMessages),
 };

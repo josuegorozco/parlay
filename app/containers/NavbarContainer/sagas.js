@@ -28,5 +28,5 @@ export function* defaultSaga() {
 */
 
 export default [
-    defaultSaga
+    defaultSaga,
 ];

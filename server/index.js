@@ -10,19 +10,30 @@ import config from '../build/webpack/webpack.config.dev';
 const port = 3000;
 const app = express();
 const compiler = webpack(config);
-
-app.use(cors());
-app.use(webpackDevMiddleware(compiler, {
+const middleware = webpackDevMiddleware(compiler, {
     noInfo: true,
     publicPath: config.output.publicPath,
     silent: true,
     stats: 'errors-only'
-}));
+});
 
+app.use(cors());
+app.use(middleware);
 app.use(webpackHotMiddleware(compiler));
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '../app/index.html'));
+// ------------------------------------------------------
+// Since webpackDevMiddleware uses memory-fs internally to store build
+// artifacts, we use it instead
+const fs = middleware.fileSystem;
+
+app.get('*', (req, res) => {
+    fs.readFile(path.join(__dirname, '../app/index.html'), (err, file) => {
+        if (err) {
+            res.sendStatus(404);
+        } else {
+            res.send(file.toString());
+        }
+    });
 });
 
 app.listen(port, (error) => {

@@ -10,13 +10,13 @@ import configureStore from '../../store';
 import {
     injectAsyncReducer,
     injectAsyncSagas,
-    getAsyncInjectors
+    getAsyncInjectors,
 } from '../asyncInjectors';
 
 // Fixtures
 
 const initialState = fromJS({
-    reduced: 'soon'
+    reduced: 'soon',
 });
 
 const reducer = (state = initialState, action) => {
@@ -31,12 +31,12 @@ const reducer = (state = initialState, action) => {
 function* testSaga() {
     yield put({
         type: 'TEST',
-        payload: 'yup'
+        payload: 'yup',
     });
 }
 
 const sagas = [
-    testSaga
+    testSaga,
 ];
 
 describe('asyncInjectors', () => {
@@ -50,7 +50,7 @@ describe('asyncInjectors', () => {
         it('given a store, should return all async injectors', () => {
             const {
                 injectReducer,
-                injectSagas
+                injectSagas,
             } = getAsyncInjectors(store);
 
             injectReducer('test', reducer);
@@ -58,7 +58,7 @@ describe('asyncInjectors', () => {
 
             const actual = store.getState().get('test');
             const expected = initialState.merge({
-                reduced: 'yup'
+                reduced: 'yup',
             });
 
             expect(actual.toJS()).toEqual(expected.toJS());
@@ -145,7 +145,7 @@ describe('asyncInjectors', () => {
 
                 const actual = store.getState().get('test');
                 const expected = initialState.merge({
-                    reduced: 'yup'
+                    reduced: 'yup',
                 });
 
                 expect(actual.toJS()).toEqual(expected.toJS());
@@ -158,7 +158,7 @@ describe('asyncInjectors', () => {
 
                 try {
                     injectSagas({
-                        testSaga
+                        testSaga,
                     });
                 } catch (err) {
                     result = err.name === 'Invariant Violation';

@@ -10,19 +10,26 @@
  */
 
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
-import messages from './messages';
+import classNames from 'classnames';
+import styles from './styles.scss';
 
 export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
     render() {
         return (
-            <div>
-                <h1>
-                    <FormattedMessage {...messages.header} />
-                </h1>
-                <p>
-                    Hello World!
-                </p>
+            <div className={classNames('container', styles.page)}>
+                <div className="jumbotron">
+                    <h1>Home Page</h1>
+                    <p className="lead">
+                        This is a sample page.
+                    </p>
+                    <hr />
+                    <p>
+                        Sample paragraph here...
+                    </p>
+                    <p className="lead">
+                        <a className="btn btn-primary btn-lg" role="button">Learn more</a>
+                    </p>
+                </div>
             </div>
         );
     }

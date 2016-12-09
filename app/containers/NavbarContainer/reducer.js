@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable';
 import {
-    DEFAULT_ACTION
+    DEFAULT_ACTION,
 } from './constants';
 
 /*

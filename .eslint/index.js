@@ -1,10 +1,9 @@
 module.exports = {
     installedESLint: true,
     extends: [
-        'eslint-config-airbnb-base',
-        './rules/react-a11y'
+        './rules/react',
+        './rules/react-a11y',
     ].map(require.resolve),
-    parser: 'babel-eslint',
     parserOptions: {
         ecmaVersion: 7,
         sourceType: 'module',
@@ -39,7 +38,7 @@ module.exports = {
                 parameters: 2
             }
         }],
-        'comma-dangle': [2, 'never'],
+        'comma-dangle': [2, 'always-multiline'],
         'class-methods-use-this': 0,
         'require-yield': 0,
         'no-console': 1,
@@ -49,9 +48,14 @@ module.exports = {
         'import/prefer-default-export': 0,
         'import/no-named-as-default': 0,
         'import/no-named-default': 0,
+        'react/forbid-prop-types': 0,
         'react/jsx-uses-react': 1,
         'react/jsx-uses-vars': 1,
         'react/jsx-indent': [2, 4],
-        'react/jsx-indent-props': [2, 4]
-    }
+        'react/jsx-indent-props': [2, 4],
+        'react/jsx-filename-extension': 0,
+    },
+    globals: {
+        '__DEV__': true,
+    },
 };

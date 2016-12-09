@@ -1,4 +1,4 @@
 export default {
     test: /\.json$/,
-    loader: 'json-loader'
+    loader: 'json-loader',
 };

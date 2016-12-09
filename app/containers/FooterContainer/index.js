@@ -1,26 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import selectNavbarContainer from './selectors';
-import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
 
 /*
 |--------------------------------------------------------------------------
-| NavbarContainer
+| FooterContainer
 |--------------------------------------------------------------------------
 |
 | Container index.js
 |
 */
 
-export class NavbarContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
+export class FooterContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
     render() {
         return (
-            <Navbar />
+            <Footer />
         );
     }
 }
 
-const mapStateToProps = selectNavbarContainer();
 
 /**
  * mapDispatchToProps
@@ -34,4 +32,4 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavbarContainer);
+export default connect(mapDispatchToProps)(FooterContainer);

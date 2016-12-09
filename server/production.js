@@ -1,22 +1,21 @@
 import express from 'express'; /* eslint-disable no-console */
-import compression from 'compression';
+import cors from 'cors';
 import path from 'path';
-import open from 'open';
+import compression from 'compression';
 
 const port = 3000;
 const app = express();
 
-app.use(express.static('dist'));
+app.use(cors());
 app.use(compression());
+app.use(express.static('dist'));
 
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
 app.listen(port, (error) => {
     if (error) {
         console.log(error);
-    } else {
-        open(`http://localhost:${port}`);
     }
 });

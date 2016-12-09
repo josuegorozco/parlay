@@ -22,10 +22,12 @@ export default webpackBase({
     output: {
         path: path.resolve(rootPath, 'app'),
         publicPath: '/',
-        filename: '[name].chunk.js'
+        filename: '[name].chunk.js',
     },
     plugins: plugins(),
+    devtool: 'source-map',
     babelQuery: {
-        presets: ['react-hmre']
-    }
+        presets: ['react-hmre'],
+        plugins: ['transform-runtime'],
+    },
 });
