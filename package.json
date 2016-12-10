@@ -11,7 +11,8 @@
     "open:browser": "/bin/sleep 1 && open http://localhost:3000",
     "lint": "esw build/webpack/webpack.config.dev.* app build --color --config \"./.eslintrc.js\"",
     "lint:eslint": "eslint --ignore-path .gitignore",
-    "lint:watch": "npm run lint -- --watch",
+    "lint:scss": "stylelint ./app/**/*.scss --config .stylelintrc.js --syntax scss || exit 0",
+    "lint:watch": "nodemon -e scss -x \"npm run lint:scss\" -q && npm run lint -- --watch",
     "lint:staged": "lint-staged",
     "test": "mocha --reporter progress build/tests/index.js \"app/**/*.test.js\" --compilers js:babel-register --require babel-polyfill",
     "test:spec": "npm run test -- --reporter spec",
@@ -30,7 +31,9 @@
     "version:patch": "npm version patch"
   },
   "lint-staged": {
-    "*.js": "lint:eslint"
+    "*.js": "lint:eslint",
+    "*.css": "stylelint",
+    "*.scss": "stylelint"
   },
   "pre-commit": "lint:staged",
   "repository": {
@@ -146,6 +149,8 @@
     "rimraf": "^2.5.4",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
+    "stylelint": "^7.6.0",
+    "stylelint-config-standard": "^15.0.0",
     "url-loader": "^0.5.7",
     "webpack": "^2.1.0-beta.26",
     "webpack-dev-middleware": "^1.8.4",
