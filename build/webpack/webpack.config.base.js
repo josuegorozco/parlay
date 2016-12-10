@@ -51,5 +51,11 @@ export default options => ({
     devtool: (options.devtool || 'inline-source-map'),
     resolve: {
         modules: ['app', 'node_modules'],
+        extensions: [
+            '.js',
+            '.jsx',
+            '.json',
+            '.react.js',
+        ],
     },
 });
