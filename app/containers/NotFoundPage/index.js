@@ -10,6 +10,7 @@
  */
 
 import React from 'react';
+import FontAwesome from 'react-fontawesome';
 import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import messages from './messages';
@@ -20,7 +21,13 @@ export default class NotFound extends React.PureComponent { // eslint-disable-li
         return (
             <div className={classNames('container', styles.page)}>
                 <div className="jumbotron">
-                    <h1>404 <FormattedMessage {...messages.header} /></h1>
+                    <h1>
+                        <FontAwesome
+                            className={styles.icoNotFound}
+                            name="exclamation-triangle"
+                        />
+                        404 <FormattedMessage {...messages.header} />
+                    </h1>
                     <hr />
                     <p className="lead">
                         Oops. The page was not found.

@@ -11,6 +11,7 @@
 
 import React from 'react';
 import classNames from 'classnames';
+import FontAwesome from 'react-fontawesome';
 import styles from './styles.scss';
 
 export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -18,7 +19,13 @@ export default class HomePage extends React.Component { // eslint-disable-line r
         return (
             <div className={classNames('container', styles.page)}>
                 <div className="jumbotron">
-                    <h1>Home Page</h1>
+                    <h1>
+                        <FontAwesome
+                            className={styles.icoHome}
+                            name="home"
+                        />
+                        Home Page
+                    </h1>
                     <p className="lead">
                         This is a sample page.
                     </p>
