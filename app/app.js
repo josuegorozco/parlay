@@ -11,6 +11,7 @@ import App from './containers/App';
 import LanguageProvider from './containers/LanguageProvider';
 import configureStore from './store';
 import createRoutes from './routes';
+import './assets/scss/vendor.scss';
 import './assets/scss/app.scss';
 
 /*

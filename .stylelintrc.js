@@ -4,6 +4,7 @@ module.exports = {
         indentation: 4,
         'string-quotes': 'single',
         'color-hex-case': 'lower',
+        'color-hex-length': 'long',
         'declaration-block-trailing-semicolon': 'always',
         'selector-pseudo-class-no-unknown': [
             true,
