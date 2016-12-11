@@ -1,0 +1,113 @@
+.check {
+    position: relative;
+    padding-left: 20;
+    cursor: pointer;
+
+    input {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+
+        &:checked + i {
+            &::before {
+                left: ($check-size - $check-sign-size)/2;
+                top: ($check-size - $check-sign-size)/2;
+                width: $check-sign-size;
+                height: $check-sign-size;
+                background-color: $check-sign-color;
+            }
+        }
+
+        &:checked + span .active {
+            display: inherit;
+        }
+
+        &[type='radio'] + i {
+            &,
+            &::before {
+                border-radius: 50%;
+            }
+        }
+
+        &[disabled],
+        fieldset[disabled] & {
+            & + i {
+                border-color: lighten($input-border, 5%);
+
+                &::before {
+                    background-color: lighten($input-border, 5%);
+                }
+            }
+        }
+    }
+
+    > i {
+        width: $check-size;
+        height: $check-size;
+        line-height: 1;
+        box-shadow: 0 0 1px rgba(120, 130, 140, 0.35);
+        margin-left: -20;
+        margin-top: -2px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 4px;
+        background-clip: padding-box;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 0;
+            height: 0;
+            background-color: transparent;
+        }
+    }
+
+    > span {
+        margin-left: -20;
+
+        .active {
+            display: none;
+        }
+    }
+
+    &.check-color input:checked + i::before {
+        background-color: #ffffff;
+    }
+}
+
+.check-md {
+    input {
+        &:checked + i {
+            &::before {
+                left: ($check-md-size - $check-sign-size)/2;
+                top: ($check-md-size - $check-sign-size)/2;
+            }
+        }
+    }
+
+    > i {
+        width: $check-md-size;
+        height: $check-md-size;
+    }
+}
+
+.check-lg {
+    input {
+        &:checked + i {
+            &::before {
+                width: $check-sign-size * 2;
+                height: $check-sign-size * 2;
+                left: ($check-lg-size - $check-sign-size * 2)/2;
+                top: ($check-lg-size - $check-sign-size * 2)/2;
+            }
+        }
+    }
+
+    > i {
+        width: $check-lg-size;
+        height: $check-lg-size;
+    }
+}
