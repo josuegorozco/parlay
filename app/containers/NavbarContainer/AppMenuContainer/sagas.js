@@ -15,7 +15,7 @@
  * @returns {void}
  */
 export function* defaultSaga() {
-    return true;
+    return false;
 }
 
 /*

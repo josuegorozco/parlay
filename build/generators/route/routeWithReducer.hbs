@@ -9,7 +9,7 @@
      * @returns {void}
      */
     getComponent(nextState, cb) {
-        const importModules = Promise.all([
+        const importModules = Promise.all(globalModules.concat([
             System.import('containers/{{ properCase component }}/reducer'),
             {{#if useSagas}}
             System.import('containers/{{ properCase component }}/sagas'),
@@ -19,10 +19,18 @@
 
         const renderRoute = loadModule(cb);
 
-        importModules.then(([component, reducer,{{#if useSagas}} sagas{{/if}}]) => {
-            injectReducer('{{ camelCase component }}', reducer.default);
+        importModules.then(([
+            appMenuReducer,
+            appMenuSagas,
+            {{ camelCase component }}Reducer,
+            {{#if useSagas}}{{ camelCase component }}Sagas,{{/if}}
+            component,
+        ]) => {
+            injectReducer('appMenuContainer', appMenuReducer.default);
+            injectSagas('appMenuContainer', appMenuSagas.default);
+            injectReducer('{{ camelCase component }}', {{ camelCase component }}Reducer.default);
             {{#if useSagas}}
-            injectSagas('{{ camelCase component }}', sagas.default);
+            injectSagas('{{ camelCase component }}', {{ camelCase component }}Sagas.default);
             {{/if}}
             renderRoute(component);
         });

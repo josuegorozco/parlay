@@ -2,13 +2,19 @@
     path: '{{ path }}',
     name: '{{ camelCase component }}',
     getComponent(location, cb) {
-        const importModules = Promise.all([
+        const importModules = Promise.all(globalModules.concat([
             System.import('containers/{{ properCase component }}'),
         ]);
 
         const renderRoute = loadModule(cb);
 
-        importModules.then(([component]) => {
+        importModules.then(([
+            appMenuReducer,
+            appMenuSagas,
+            component,
+        ]) => {
+            injectReducer('appMenuContainer', appMenuReducer.default);
+            injectSagas('appMenuContainer', appMenuSagas.default);
             renderRoute(component);
         });
 

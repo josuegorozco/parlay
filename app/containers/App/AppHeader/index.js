@@ -3,21 +3,28 @@ import classNames from 'classnames';
 
 /*
 |--------------------------------------------------------------------------
-| Navbar
+| AppHeader
 |--------------------------------------------------------------------------
 |
 | Stateless component
 |
 */
 
-const Navbar = props => (
-    <div className={classNames('navbar')}>
+const AppHeader = props => (
+    <div
+        className={classNames(
+            'app-header',
+            'navbar-md',
+            'white',
+            'box-shadow-z4',
+        )}
+    >
         {props.children}
     </div>
 );
 
-Navbar.propTypes = {
+AppHeader.propTypes = {
     children: React.PropTypes.node,
 };
 
-export default Navbar;
+export default AppHeader;

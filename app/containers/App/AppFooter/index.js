@@ -3,21 +3,28 @@ import classNames from 'classnames';
 
 /*
 |--------------------------------------------------------------------------
-| Navbar
+| AppFooter
 |--------------------------------------------------------------------------
 |
 | Stateless component
 |
 */
 
-const Navbar = props => (
-    <div className={classNames('navbar')}>
+const AppFooter = props => (
+    <div
+        className={classNames(
+            'app-footer',
+            'white',
+            'dk',
+            'pos-rtl',
+        )}
+    >
         {props.children}
     </div>
 );
 
-Navbar.propTypes = {
+AppFooter.propTypes = {
     children: React.PropTypes.node,
 };
 
-export default Navbar;
+export default AppFooter;

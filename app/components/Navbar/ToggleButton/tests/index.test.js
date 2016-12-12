@@ -1,8 +1,8 @@
 // import expect from 'expect';
 // import React from 'react';
 // import { shallow } from 'enzyme';
-// import NavbarContainer from '../index';
+// import ToggleButton from '../index';
 
-describe('<NavbarContainer />', () => {
+describe('<ToggleButton />', () => {
     it('Expect to have unit tests specified');
 });

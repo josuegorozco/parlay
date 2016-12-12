@@ -1,8 +1,8 @@
 // import expect from 'expect';
 // import React from 'react';
 // import { shallow } from 'enzyme';
-// import NavbarContainer from '../index';
+// import AppFooter from '../index';
 
-describe('<NavbarContainer />', () => {
+describe('<AppFooter />', () => {
     it('Expect to have unit tests specified');
 });

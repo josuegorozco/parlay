@@ -17,8 +17,8 @@ import styles from './styles.scss';
 export default class HomePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
     render() {
         return (
-            <div className={classNames('container', styles.page)}>
-                <div className="jumbotron">
+            <div className={classNames('container-fluid', styles.page)}>
+                <div className="jumbotron dker">
                     <h1>
                         <FontAwesome
                             className={styles.icoHome}
@@ -34,7 +34,7 @@ export default class HomePage extends React.Component { // eslint-disable-line r
                         Sample paragraph here...
                     </p>
                     <p className="lead">
-                        <a className="btn btn-primary btn-lg" role="button">Learn more</a>
+                        <button className="md-btn md-raised m-b-sm p-x success">Learn More</button>
                     </p>
                 </div>
             </div>

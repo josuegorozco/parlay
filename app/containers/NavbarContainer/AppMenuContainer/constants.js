@@ -1,10 +1,10 @@
 /*
 |--------------------------------------------------------------------------
-| NavbarContainer constants
+| AppMenuContainer constants
 |--------------------------------------------------------------------------
 |
 | Defined constants
 |
 */
 
-export const DEFAULT_ACTION = 'app/NavbarContainer/DEFAULT_ACTION';
+export const DEFAULT_ACTION = 'app/AppMenuContainer/DEFAULT_ACTION';

@@ -52,23 +52,27 @@ export default function createRoutes(store) {
     // ------------------------------------------------------
     // Global modules
     const globalModules = [
-        System.import('containers/NavbarContainer/reducer'),
-        System.import('containers/NavbarContainer/sagas'),
+        System.import('containers/NavbarContainer/AppMenuContainer/reducer'),
+        System.import('containers/NavbarContainer/AppMenuContainer/sagas'),
     ];
 
     return [{
         path: '/',
         name: 'home',
         getComponent(nextState, cb) {
-            const importModules = Promise.all([
+            const importModules = Promise.all(globalModules.concat([
                 System.import('containers/HomePage'),
-            ].concat(globalModules));
+            ]));
 
             const renderRoute = loadModule(cb);
 
-            importModules.then(([component, reducer, sagas]) => {
-                injectReducer('navbarContainer', reducer.default);
-                injectSagas('navbarContainer', sagas.default);
+            importModules.then(([
+                appMenuReducer,
+                appMenuSagas,
+                component,
+            ]) => {
+                injectReducer('appMenuContainer', appMenuReducer.default);
+                injectSagas('appMenuContainer', appMenuSagas.default);
                 renderRoute(component);
             });
 
@@ -78,15 +82,19 @@ export default function createRoutes(store) {
         path: '*',
         name: 'notfound',
         getComponent(nextState, cb) {
-            const importModules = Promise.all([
+            const importModules = Promise.all(globalModules.concat([
                 System.import('containers/NotFoundPage'),
-            ].concat(globalModules));
+            ]));
 
             const renderRoute = loadModule(cb);
 
-            importModules.then(([component, reducer, sagas]) => {
-                injectReducer('navbarContainer', reducer.default);
-                injectSagas('navbarContainer', sagas.default);
+            importModules.then(([
+                appMenuReducer,
+                appMenuSagas,
+                component,
+            ]) => {
+                injectReducer('appMenuContainer', appMenuReducer.default);
+                injectSagas('appMenuContainer', appMenuSagas.default);
                 renderRoute(component);
             });
 

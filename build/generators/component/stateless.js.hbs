@@ -19,18 +19,21 @@ import styles from './styles.scss';
 |
 */
 
-function {{ properCase name }}() {
-    return (
-        {{#if wantCSS}}
-        <div className={{curly true}}classNames(styles.{{ camelCase name }}){{curly}}>
-        {{else}}
-        <div>
-        {{/if}}
-        {{#if wantMessages}}
-            <FormattedMessage {...messages.header} />
-        {{/if}}
-        </div>
-    );
-}
+const {{ properCase name }} = props => (
+    {{#if wantCSS}}
+    <div className={{curly true}}classNames(styles.{{ camelCase name }}){{curly}}>
+    {{else}}
+    <div>
+    {{/if}}
+    {{#if wantMessages}}
+        <FormattedMessage {...messages.header} />
+    {{/if}}
+        {props.children}
+    </div>
+);
+
+{{ properCase name }}.propTypes = {
+    children: React.PropTypes.node,
+};
 
 export default {{ properCase name }};

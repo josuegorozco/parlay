@@ -5,11 +5,11 @@ import { createSelector } from 'reselect';
 | Direct
 |--------------------------------------------------------------------------
 |
-| Direct selector to the navbarContainer state domain
+| Direct selector to the appMenuContainer state domain
 |
 */
 
-const selectNavbarContainerDomain = () => state => state.get('navbarContainer');
+const selectAppMenuContainerDomain = () => state => state.get('appMenuContainer');
 
 /*
 |--------------------------------------------------------------------------
@@ -25,12 +25,12 @@ const selectNavbarContainerDomain = () => state => state.get('navbarContainer');
 | Default
 |--------------------------------------------------------------------------
 |
-| Default selector used by NavbarContainer
+| Default selector used by AppMenuContainer
 |
 */
 
-const selectNavbarContainer = () => createSelector(
-    selectNavbarContainerDomain(),
+const selectAppMenuContainer = () => createSelector(
+    selectAppMenuContainerDomain(),
     substate => substate.toJS(),
 );
 
@@ -43,7 +43,7 @@ const selectNavbarContainer = () => createSelector(
 |
 */
 
-export default selectNavbarContainer;
+export default selectAppMenuContainer;
 export {
-    selectNavbarContainerDomain,
+    selectAppMenuContainerDomain,
 };

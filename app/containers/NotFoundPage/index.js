@@ -19,7 +19,7 @@ import styles from './styles.scss';
 export default class NotFound extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
     render() {
         return (
-            <div className={classNames('container', styles.page)}>
+            <div className={classNames('container-fluid', styles.page)}>
                 <div className="jumbotron">
                     <h1>
                         <FontAwesome

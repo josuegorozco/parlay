@@ -186,7 +186,7 @@
                     padding-left: 3.5rem;
 
                     .nav-text {
-                        padding: (($aside-nav-sub-height - 1.125) / 2) 0;
+                        padding: ($aside-nav-sub-height - 1.125)/2 0;
                     }
                 }
 
@@ -200,7 +200,7 @@
             }
 
             a {
-                @include clearfix;
+                @include clearfix();
 
                 display: block;
                 padding: 0 1rem;
@@ -254,36 +254,36 @@
 .nav-text {
     display: block;
     line-height: 1.125rem;
-    padding: (($aside-nav-height - 1.125) / 2) 0;
-
-    .nav > li > a & {
-        font-weight: 500;
-    }
+    padding: ($aside-nav-height - 1.125)/2 0;
 
     span,
     small {
         display: block;
     }
+}
 
-    .navside & {
-        opacity: 0.75;
-    }
+.nav > li > a .nav-text {
+    font-weight: 500;
+}
 
-    .navside a:hover > &,
-    .navside a:focus > &,
-    .navside .active > a > & {
-        opacity: 1;
-    }
+.navside .nav-text {
+    opacity: 0.75;
+}
 
-    .navbar & {
-        line-height: 1;
-        vertical-align: middle;
-        display: inline-block;
-        padding: 0;
+.navside a:hover > .nav-text,
+.navside a:focus > .nav-text,
+.navside .active > a > .nav-text {
+    opacity: 1;
+}
 
-        span.text-xs {
-            margin-top: 0.25rem;
-        }
+.navbar .nav-text {
+    line-height: 1;
+    vertical-align: middle;
+    display: inline-block;
+    padding: 0;
+
+    span.text-xs {
+        margin-top: 0.25rem;
     }
 }
 
@@ -308,10 +308,10 @@
             height: 100%;
         }
     }
+}
 
-    .navbar & {
-        margin-right: 0.5rem;
-    }
+.navbar .nav-icon {
+    margin-right: 0.5rem;
 }
 
 .nav-label {
@@ -319,10 +319,10 @@
     margin-left: 1rem;
     font-style: normal;
     z-index: 1;
+}
 
-    .navbar & {
-        margin-left: 0.5rem;
-    }
+.navbar .nav-label {
+    margin-left: 0.5rem;
 }
 
 .nav-caret {
@@ -333,10 +333,10 @@
     i {
         @include transition(transform 0.3s ease-in-out);
     }
+}
 
-    .navbar & {
-        margin-left: 0.5rem;
-    }
+.navbar .nav-caret {
+    margin-left: 0.5rem;
 }
 
 .nav-sub {
@@ -344,8 +344,8 @@
     overflow: hidden;
 
     @include transition(max-height 0.4s ease 0s);
+}
 
-    .active > & {
-        max-height: 50rem;
-    }
+.active > .nav-sub {
+    max-height: 50rem;
 }

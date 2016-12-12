@@ -1,7 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import selectNavbarContainer from './selectors';
 import Navbar from '../../components/Navbar';
+import ToggleButton from '../../components/Navbar/ToggleButton';
+import Brand from '../../components/Navbar/Brand';
+import NavItems from '../../components/Navbar/NavItems';
+import AppMenuContainer from './AppMenuContainer';
 
 /*
 |--------------------------------------------------------------------------
@@ -15,12 +18,17 @@ import Navbar from '../../components/Navbar';
 export class NavbarContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
     render() {
         return (
-            <Navbar {...this.props} />
+            <Navbar>
+                <ToggleButton />
+                <Brand />
+                <NavItems>
+                    <AppMenuContainer />
+                </NavItems>
+            </Navbar>
         );
     }
 }
 
-const mapStateToProps = selectNavbarContainer();
 
 /**
  * mapDispatchToProps
@@ -34,4 +42,4 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavbarContainer);
+export default connect(mapDispatchToProps)(NavbarContainer);
