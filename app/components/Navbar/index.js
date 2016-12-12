@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.scss';
+import classNames from 'classnames';
 
 /*
 |--------------------------------------------------------------------------
@@ -10,21 +10,14 @@ import styles from './styles.scss';
 |
 */
 
-function Navbar({ topics }) {
-    return (
-        <div className={styles.navbar}>
-            Navbar - with {topics.length} topics.
-        </div>
-    );
-}
+const Navbar = props => (
+    <div className={classNames('navbar')}>
+        {props.children}
+    </div>
+);
 
 Navbar.propTypes = {
-    topics: React.PropTypes.arrayOf(
-        React.PropTypes.shape({
-            name: React.PropTypes.string.isRequired,
-            description: React.PropTypes.string.isRequired,
-        })
-    ).isRequired,
+    children: React.PropTypes.node,
 };
 
 export default Navbar;

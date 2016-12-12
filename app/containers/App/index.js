@@ -1,4 +1,8 @@
 import React from 'react';
+import AppContent from './AppContent';
+import AppHeader from './AppHeader';
+import AppBody from './AppBody';
+import AppFooter from './AppFooter';
 import NavbarContainer from '../NavbarContainer';
 import FooterContainer from '../FooterContainer';
 
@@ -23,11 +27,17 @@ export default class App extends React.Component { // eslint-disable-line react/
 
     render() {
         return (
-            <div>
-                <NavbarContainer />
-                {React.Children.toArray(this.props.children)}
-                <FooterContainer />
-            </div>
+            <AppContent>
+                <AppHeader>
+                    <NavbarContainer />
+                </AppHeader>
+                <AppBody>
+                    {React.Children.toArray(this.props.children)}
+                </AppBody>
+                <AppFooter>
+                    <FooterContainer />
+                </AppFooter>
+            </AppContent>
         );
     }
 }
