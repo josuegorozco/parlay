@@ -7,4 +7,6 @@
 |
 */
 
-export const DEFAULT_ACTION = 'app/AppMenuContainer/DEFAULT_ACTION';
+export const REQUEST_APP_MENU = 'app/AppMenuContainer/REQUEST_APP_MENU';
+export const REQUEST_APP_MENU_SUCCEEDED = 'app/AppMenuContainer/REQUEST_APP_MENU_SUCCEEDED';
+export const REQUEST_APP_MENU_FAILED = 'app/AppMenuContainer/REQUEST_APP_MENU_FAILED';

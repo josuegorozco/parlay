@@ -39,6 +39,7 @@ const AppMenuItem = ({ label, icon, url, className }) => (
             <span
                 className={classNames(
                     'block',
+                    'appitem'
                 )}
             >
                 {label}

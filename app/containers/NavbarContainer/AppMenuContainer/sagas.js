@@ -1,4 +1,8 @@
-// import { take, call, put, select } from 'redux-saga/effects';
+import { call, put } from 'redux-saga/effects';
+import { takeLatest } from 'redux-saga';
+import { REQUEST_APP_MENU } from './constants';
+import { requestAppMenuSucceeded, requestAppMenuFailed } from './actions';
+import response from './data/menu';
 
 /*
 |--------------------------------------------------------------------------
@@ -9,13 +13,24 @@
 |
 */
 
-/**
- * defaultSaga
- *
- * @returns {void}
- */
-export function* defaultSaga() {
-    return false;
+export function fetchAppMenuFromServer() {
+    // return fetch('http://localhost:3001/api/appmenu')
+    //     .then(response => response.json());
+
+    return response;
+}
+
+export function* fetchAppMenu() {
+    try {
+        const appMenu = yield call(fetchAppMenuFromServer);
+        yield put(requestAppMenuSucceeded(appMenu));
+    } catch (e) {
+        yield put(requestAppMenuFailed(e.message));
+    }
+}
+
+export function* fetchAppMenuSaga() {
+    yield* takeLatest(REQUEST_APP_MENU, fetchAppMenu);
 }
 
 /*
@@ -28,5 +43,5 @@ export function* defaultSaga() {
 */
 
 export default [
-    defaultSaga,
+    fetchAppMenuSaga,
 ];

@@ -1,9 +1,19 @@
-// import expect from 'expect';
-// import { selectAppMenuContainerDomain } from '../selectors';
-// import { fromJS } from 'immutable';
+import expect from 'expect';
+import { fromJS } from 'immutable';
+import { selectAppMenuContainerDomain } from '../selectors';
 
-// const selector = selectAppMenuContainerDomain();
+const selector = selectAppMenuContainerDomain();
 
 describe('selectAppMenuContainerDomain', () => {
-    it('Expect to have unit tests specified');
+    it('it should select the appMenuContainer state', () => {
+        const appMenuContainerState = fromJS({
+            menu: [],
+        });
+
+        const mockedState = fromJS({
+            appMenuContainer: appMenuContainerState,
+        });
+
+        expect(selector(mockedState)).toEqual(appMenuContainerState);
+    });
 });

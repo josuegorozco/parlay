@@ -35,8 +35,10 @@ const AppMenu = ({ menu }) => {
 AppMenu.propTypes = {
     menu: React.PropTypes.arrayOf(
         React.PropTypes.shape({
+            id: React.PropTypes.number.isRequired,
             label: React.PropTypes.string.isRequired,
             icon: React.PropTypes.string,
+            className: React.PropTypes.string,
         })
     ),
 };

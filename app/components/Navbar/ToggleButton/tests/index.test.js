@@ -1,8 +1,14 @@
-// import expect from 'expect';
-// import React from 'react';
-// import { shallow } from 'enzyme';
-// import ToggleButton from '../index';
+import expect from 'expect';
+import React from 'react';
+import { shallow } from 'enzyme';
+import ToggleButton from '../index';
 
 describe('<ToggleButton />', () => {
-    it('Expect to have unit tests specified');
+    it('should render a <a> element', () => {
+        const renderedComponent = shallow(
+            <ToggleButton />
+        );
+
+        expect(renderedComponent.find('a').length).toEqual(1);
+    });
 });

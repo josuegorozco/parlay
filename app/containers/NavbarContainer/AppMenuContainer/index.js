@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { requestAppMenu } from './actions';
 import selectAppMenuContainer from './selectors';
 import AppMenu from '../../../components/Navbar/AppMenu';
 
@@ -13,6 +14,14 @@ import AppMenu from '../../../components/Navbar/AppMenu';
 */
 
 export class AppMenuContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
+    static propTypes = {
+        requestAppMenu: React.PropTypes.func.isRequired,
+    }
+
+    componentWillMount() {
+        this.props.requestAppMenu();
+    }
+
     render() {
         return (
             <AppMenu {...this.props} />
@@ -28,9 +37,9 @@ const mapStateToProps = selectAppMenuContainer();
  * @param dispatch
  * @returns {object}
  */
-function mapDispatchToProps(dispatch) {
+export function mapDispatchToProps(dispatch) {
     return {
-        dispatch,
+        requestAppMenu: () => dispatch(requestAppMenu()),
     };
 }
 

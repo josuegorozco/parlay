@@ -1,6 +1,6 @@
 import { fromJS } from 'immutable';
 import {
-    DEFAULT_ACTION,
+    REQUEST_APP_MENU_SUCCEEDED,
 } from './constants';
 
 /*
@@ -13,43 +13,7 @@ import {
 */
 
 const initialState = fromJS({
-    menu: [
-        {
-            id: 1,
-            label: 'Inbox',
-            icon: 'envelope',
-            className: 'b-r b-b',
-        },
-        {
-            id: 2,
-            label: 'Contacts',
-            icon: 'users',
-            className: 'b-r b-b',
-        },
-        {
-            id: 3,
-            label: 'Calendar',
-            icon: 'calendar',
-            className: 'b-b',
-        },
-        {
-            id: 4,
-            label: 'Notes',
-            icon: 'pencil',
-            className: 'b-r',
-        },
-        {
-            id: 5,
-            label: 'To-do',
-            icon: 'list-ul',
-            className: 'b-r',
-        },
-        {
-            id: 6,
-            label: 'History',
-            icon: 'history',
-        },
-    ],
+    menu: [],
 });
 
 /**
@@ -61,8 +25,8 @@ const initialState = fromJS({
  */
 function appMenuContainerReducer(state = initialState, action) {
     switch (action.type) {
-        case DEFAULT_ACTION:
-            return state;
+        case REQUEST_APP_MENU_SUCCEEDED:
+            return state.set('menu', action.menu);
         default:
             return state;
     }

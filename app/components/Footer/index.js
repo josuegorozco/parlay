@@ -21,7 +21,7 @@ function Footer() {
                         <div className="col-sm-3 clearfix">
                             <div className="text-sm-left text-xs-left m-y">
                                 <div className="nav text-sm">
-                                    Copyright © 2016. All Rights Reserved.
+                                    Copyright © {new Date().getFullYear()}. All Rights Reserved.
                                 </div>
                             </div>
                         </div>

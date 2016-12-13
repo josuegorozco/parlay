@@ -1,9 +1,16 @@
 import expect from 'expect';
-// import { select{{ properCase name }}Domain } from '../selectors';
-// import { fromJS } from 'immutable';
+import { fromJS } from 'immutable';
+import { select{{ properCase name }}Domain } from '../selectors';
 
-// const selector = select{{ properCase name}}Domain();
+const selector = select{{ properCase name}}Domain();
 
 describe('select{{ properCase name }}Domain', () => {
-    it('Expect to have unit tests specified');
+    it('it should select the {{ properCase name }} state', () => {
+        const {{ properCase name }}State = fromJS({ test: [] });
+        const mockedState = fromJS({
+            {{ properCase name }}: {{ properCase name }}State,
+        });
+
+        expect(selector(mockedState)).toEqual({{ properCase name }}State);
+    });
 });

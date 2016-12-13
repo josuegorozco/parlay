@@ -1,5 +1,7 @@
 import {
-    DEFAULT_ACTION,
+    REQUEST_APP_MENU,
+    REQUEST_APP_MENU_SUCCEEDED,
+    REQUEST_APP_MENU_FAILED,
 } from './constants';
 
 /*
@@ -11,8 +13,22 @@ import {
 |
 */
 
-export function defaultAction() {
+export function requestAppMenu() {
     return {
-        type: DEFAULT_ACTION,
+        type: REQUEST_APP_MENU,
+    };
+}
+
+export function requestAppMenuSucceeded(menu) {
+    return {
+        type: REQUEST_APP_MENU_SUCCEEDED,
+        menu,
+    };
+}
+
+export function requestAppMenuFailed(message) {
+    return {
+        type: REQUEST_APP_MENU_FAILED,
+        message,
     };
 }
