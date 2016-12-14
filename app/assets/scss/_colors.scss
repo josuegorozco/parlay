@@ -1,6 +1,6 @@
 @mixin color-variant($bg, $color) {
-    color: $color;
-    background-color: $bg;
+    color: $color !important;
+    background-color: $bg !important;
 
     .lt {
         background-color: lighten($bg, $color-percent);
