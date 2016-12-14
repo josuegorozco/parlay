@@ -38,7 +38,7 @@ const Brand = () => (
                     'tagline',
                 )}
             >
-                Demo
+                Demo site.
             </span>
         </span>
     </Link>
