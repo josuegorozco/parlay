@@ -1,6 +1,9 @@
 import React from 'react';
+import FontAwesome from 'react-fontawesome';
 import classNames from 'classnames';
 import NavDropdown from '../NavDropdown';
+import NavDropdownMenu from '../NavDropdownMenu';
+import NavDropdownToggle from '../NavDropdownToggle';
 import AppItem from './AppMenuItem';
 
 /*
@@ -24,10 +27,15 @@ const AppMenu = ({ menu }) => {
     ));
 
     return (
-        <NavDropdown icon="th" className="w-xl text-color pull-right p-a-0 dropdown-menu-scale">
-            <div className={classNames('row', 'no-gutter', 'text-primary-hover')}>
-                {appItems}
-            </div>
+        <NavDropdown>
+            <NavDropdownToggle>
+                <FontAwesome name="th" />
+            </NavDropdownToggle>
+            <NavDropdownMenu className="w-xl text-color pull-right p-a-0 dropdown-menu-scale">
+                <div className={classNames('row', 'no-gutter', 'text-primary-hover')}>
+                    {appItems}
+                </div>
+            </NavDropdownMenu>
         </NavDropdown>
     );
 };
