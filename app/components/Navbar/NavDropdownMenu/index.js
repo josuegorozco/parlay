@@ -3,28 +3,27 @@ import classNames from 'classnames';
 
 /*
 |--------------------------------------------------------------------------
-| NavDropdown
+| NavDropdownMenu
 |--------------------------------------------------------------------------
 |
 | Stateless component
 |
 */
 
-const NavDropdown = ({ className = '', children }) => (
-    <li
+const NavDropdownMenu = ({ className = '', children }) => (
+    <div
         className={classNames(
-            'nav-item',
-            'dropdown',
+            'dropdown-menu',
             className,
         )}
     >
         {children}
-    </li>
+    </div>
 );
 
-NavDropdown.propTypes = {
+NavDropdownMenu.propTypes = {
     className: React.PropTypes.string,
-    children: React.PropTypes.node.isRequired,
+    children: React.PropTypes.node,
 };
 
-export default NavDropdown;
+export default NavDropdownMenu;

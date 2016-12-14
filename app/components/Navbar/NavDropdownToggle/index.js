@@ -3,28 +3,29 @@ import classNames from 'classnames';
 
 /*
 |--------------------------------------------------------------------------
-| NavDropdown
+| NavDropdownToggle
 |--------------------------------------------------------------------------
 |
 | Stateless component
 |
 */
 
-const NavDropdown = ({ className = '', children }) => (
-    <li
+const NavDropdownToggle = ({ className = '', children }) => (
+    <a
+        data-toggle="dropdown"
+        aria-expanded="false"
         className={classNames(
-            'nav-item',
-            'dropdown',
+            'nav-link',
             className,
         )}
     >
         {children}
-    </li>
+    </a>
 );
 
-NavDropdown.propTypes = {
+NavDropdownToggle.propTypes = {
     className: React.PropTypes.string,
-    children: React.PropTypes.node.isRequired,
+    children: React.PropTypes.node,
 };
 
-export default NavDropdown;
+export default NavDropdownToggle;
