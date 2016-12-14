@@ -5,6 +5,7 @@ import ToggleButton from '../../components/Navbar/ToggleButton';
 import Brand from '../../components/Navbar/Brand';
 import NavItems from '../../components/Navbar/NavItems';
 import AppMenuContainer from './AppMenuContainer';
+import UserContainer from './UserContainer';
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,7 @@ export class NavbarContainer extends React.Component { // eslint-disable-line re
                 <Brand />
                 <NavItems>
                     <AppMenuContainer />
+                    <UserContainer />
                 </NavItems>
             </Navbar>
         );

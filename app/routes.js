@@ -54,6 +54,8 @@ export default function createRoutes(store) {
     const globalModules = [
         System.import('containers/NavbarContainer/AppMenuContainer/reducer'),
         System.import('containers/NavbarContainer/AppMenuContainer/sagas'),
+        System.import('containers/NavbarContainer/UserContainer/reducer'),
+        System.import('containers/NavbarContainer/UserContainer/sagas'),
     ];
 
     return [{
@@ -69,10 +71,14 @@ export default function createRoutes(store) {
             importModules.then(([
                 appMenuReducer,
                 appMenuSagas,
+                userReducer,
+                userSagas,
                 component,
             ]) => {
                 injectReducer('appMenuContainer', appMenuReducer.default);
                 injectSagas('appMenuContainer', appMenuSagas.default);
+                injectReducer('userContainer', userReducer.default);
+                injectSagas('userContainer', userSagas.default);
                 renderRoute(component);
             });
 
@@ -91,10 +97,14 @@ export default function createRoutes(store) {
             importModules.then(([
                 appMenuReducer,
                 appMenuSagas,
+                userReducer,
+                userSagas,
                 component,
             ]) => {
                 injectReducer('appMenuContainer', appMenuReducer.default);
                 injectSagas('appMenuContainer', appMenuSagas.default);
+                injectReducer('userContainer', userReducer.default);
+                injectSagas('userContainer', userSagas.default);
                 renderRoute(component);
             });
 
