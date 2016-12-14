@@ -1,6 +1,6 @@
 import webpack from 'webpack'; /* eslint-disable no-console */
 import chalk from 'chalk';
-import webpackConfig from './webpack/webpack.config.production';
+import webpackConfig from './webpack/webpack.config.production.babel';
 
 /*
 |--------------------------------------------------------------------------

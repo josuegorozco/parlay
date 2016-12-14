@@ -34,10 +34,18 @@
             ]
         },
         "production": {
+            "only": [
+                "app",
+            ],
             "plugins": [
                 "transform-react-constant-elements",
                 "transform-react-remove-prop-types",
                 "transform-react-inline-elements"
+            ]
+        },
+        "test": {
+            "plugins": [
+                "istanbul"
             ]
         }
     }

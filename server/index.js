@@ -5,7 +5,7 @@ import open from 'open';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
-import config from '../build/webpack/webpack.config.dev';
+import config from '../build/webpack/webpack.config.dev.babel';
 
 const port = 3000;
 const app = express();
@@ -14,7 +14,7 @@ const middleware = webpackDevMiddleware(compiler, {
     noInfo: true,
     publicPath: config.output.publicPath,
     silent: true,
-    stats: 'errors-only'
+    stats: 'errors-only',
 });
 
 app.use(cors());

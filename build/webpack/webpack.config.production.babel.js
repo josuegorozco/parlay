@@ -1,6 +1,5 @@
 import path from 'path';
-import webpackBase from './webpack.config.base';
-import entry from './entry';
+import webpackBase from './webpack.config.base.babel';
 import plugins from './plugins';
 
 /*
@@ -18,16 +17,14 @@ const rootPath = path.resolve(__dirname, '../../');
 // }}}
 
 export default webpackBase({
-    entry,
+    entry: [
+        path.join(rootPath, 'app/vendor.js'),
+        path.join(rootPath, 'app/app.js'),
+    ],
     output: {
-        path: path.resolve(rootPath, 'app'),
-        publicPath: '/',
-        filename: '[name].chunk.js',
+        path: path.resolve(rootPath, 'dist'),
+        filename: '[name].[chunkhash].js',
+        chunkFilename: '[name].[chunkhash].chunk.js',
     },
-    plugins: plugins(),
-    devtool: 'source-map',
-    babelQuery: {
-        presets: ['react-hmre'],
-        plugins: ['transform-runtime'],
-    },
+    plugins: plugins(true),
 });

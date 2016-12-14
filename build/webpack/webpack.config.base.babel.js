@@ -57,5 +57,10 @@ export default options => ({
             '.json',
             '.react.js',
         ],
+        mainFields: [
+            'browser',
+            'jsnext:main',
+            'main',
+        ],
     },
 });
