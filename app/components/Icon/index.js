@@ -12,23 +12,32 @@ import classNames from 'classnames';
 */
 
 const Icon = ({ name, className = '', iconType = 'material' }) => {
-    const icon = iconType === 'material' ? (
-        <i
-            className={classNames(
-                'material-icons',
-                className,
-            )}
-        >
-            {name}
-        </i>
-    ) : (
-        <FontAwesome
-            name={name}
-            className={classNames(
-                className,
-            )}
-        />
-    );
+    let icon;
+
+    switch (iconType) {
+        case 'fontawesome':
+            icon = (
+                <FontAwesome
+                    name={name}
+                    className={classNames(
+                        className,
+                    )}
+                />
+            );
+            break;
+        default:
+            icon = (
+                <i
+                    className={classNames(
+                        'material-icons',
+                        className,
+                    )}
+                >
+                    {name}
+                </i>
+            );
+            break;
+    }
 
     return icon;
 };

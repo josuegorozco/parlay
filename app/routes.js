@@ -54,6 +54,8 @@ export default function createRoutes(store) {
     const globalModules = [
         System.import('containers/NavbarContainer/AppMenuContainer/reducer'),
         System.import('containers/NavbarContainer/AppMenuContainer/sagas'),
+        System.import('containers/NavbarContainer/NavMenuContainer/reducer'),
+        System.import('containers/NavbarContainer/NavMenuContainer/sagas'),
         System.import('containers/NavbarContainer/UserContainer/reducer'),
         System.import('containers/NavbarContainer/UserContainer/sagas'),
     ];
@@ -71,12 +73,16 @@ export default function createRoutes(store) {
             importModules.then(([
                 appMenuReducer,
                 appMenuSagas,
+                navMenuReducer,
+                navMenuSagas,
                 userReducer,
                 userSagas,
                 component,
             ]) => {
                 injectReducer('appMenuContainer', appMenuReducer.default);
                 injectSagas('appMenuContainer', appMenuSagas.default);
+                injectReducer('navMenuContainer', navMenuReducer.default);
+                injectSagas('navMenuContainer', navMenuSagas.default);
                 injectReducer('userContainer', userReducer.default);
                 injectSagas('userContainer', userSagas.default);
                 renderRoute(component);
@@ -97,12 +103,16 @@ export default function createRoutes(store) {
             importModules.then(([
                 appMenuReducer,
                 appMenuSagas,
+                navMenuReducer,
+                navMenuSagas,
                 userReducer,
                 userSagas,
                 component,
             ]) => {
                 injectReducer('appMenuContainer', appMenuReducer.default);
                 injectSagas('appMenuContainer', appMenuSagas.default);
+                injectReducer('navMenuContainer', navMenuReducer.default);
+                injectSagas('navMenuContainer', navMenuSagas.default);
                 injectReducer('userContainer', userReducer.default);
                 injectSagas('userContainer', userSagas.default);
                 renderRoute(component);

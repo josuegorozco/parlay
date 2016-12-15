@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Navbar from '../../components/Navbar';
+import ToggleNav from '../../components/Navbar/ToggleNav';
 import ToggleButton from '../../components/Navbar/ToggleButton';
 import Brand from '../../components/Navbar/Brand';
 import NavItems from '../../components/Navbar/NavItems';
 import AppMenuContainer from './AppMenuContainer';
+import NavMenuContainer from './NavMenuContainer';
 import UserContainer from './UserContainer';
 
 /*
@@ -26,6 +28,9 @@ export class NavbarContainer extends React.Component { // eslint-disable-line re
                     <AppMenuContainer />
                     <UserContainer />
                 </NavItems>
+                <ToggleNav>
+                    <NavMenuContainer />
+                </ToggleNav>
             </Navbar>
         );
     }

@@ -6,7 +6,7 @@ import Label from '../index';
 describe('<Label />', () => {
     it('should render span component', () => {
         const renderedComponent = shallow(
-            <Label />
+            <Label>Test</Label>
         );
 
         expect(renderedComponent.find('span').length).toEqual(1);
