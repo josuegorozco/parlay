@@ -16,6 +16,7 @@ const ToggleNav = props => (
         aria-expanded="false"
         className={classNames(
             'navbar-toggleable-sm',
+            'p-t-sm',
             'collapse',
         )}
     >
