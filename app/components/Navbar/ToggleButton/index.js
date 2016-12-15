@@ -19,7 +19,7 @@ const ToggleButton = () => (
             'navbar-item',
             'pull-right',
             'hidden-md-up',
-            'm-a-0',
+            'm-r-0',
             'm-l',
         )}
     >
