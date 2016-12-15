@@ -27,9 +27,6 @@
 @import 'layout';
 @import 'layout-boxed';
 @import 'box';
-@import 'colors';
-@import 'colors-dark';
-@import 'colors-md';
 @import 'flexbox';
 @import 'loading';
 @import 'row';
@@ -89,4 +86,17 @@
 */
 
 @import 'utilities';
+
+/*
+|--------------------------------------------------------------------------
+| Colors
+|--------------------------------------------------------------------------
+|
+| Add colors at the end
+|
+*/
+
+@import 'colors';
+@import 'colors-dark';
+@import 'colors-md';
 }
