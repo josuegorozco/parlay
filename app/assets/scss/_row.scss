@@ -150,6 +150,18 @@
     align-items: center;
 }
 
+.v-s {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    &.inline {
+        display: inline-flex !important;
+    }
+}
+
 @include media-breakpoint-up(lg) {
     .row-col {
         > [class*='col-lg'],
