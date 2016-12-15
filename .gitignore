@@ -1,5 +1,6 @@
 node_modules/
 coverage/
+db.json
 .DS_Store
 *.log
-db.json
+*.log.*
