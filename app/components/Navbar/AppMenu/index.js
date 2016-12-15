@@ -31,8 +31,23 @@ const AppMenu = ({ menu }) => {
             <NavDropdownToggle>
                 <Icon name="apps" />
             </NavDropdownToggle>
-            <NavDropdownMenu className="w-xl text-color pull-right p-a-0 dropdown-menu-scale">
-                <div className={classNames('row', 'no-gutter', 'text-primary-hover')}>
+            <NavDropdownMenu
+                className={classNames(
+                    'w-xl',
+                    'text-color',
+                    'pull-right',
+                    'p-a-0',
+                    'dropdown-menu-scale',
+                    'r-n-96',
+                )}
+            >
+                <div
+                    className={classNames(
+                        'row',
+                        'no-gutter',
+                        'text-primary-hover',
+                    )}
+                >
                     {appItems}
                 </div>
             </NavDropdownMenu>
