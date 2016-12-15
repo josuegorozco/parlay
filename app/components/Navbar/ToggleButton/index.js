@@ -1,6 +1,6 @@
 import React from 'react';
-import FontAwesome from 'react-fontawesome';
 import classNames from 'classnames';
+import Icon from '../../Icon';
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +23,7 @@ const ToggleButton = () => (
             'm-l',
         )}
     >
-        <FontAwesome name="bars" />
+        <Icon name="more_vert" />
     </a>
 );
 

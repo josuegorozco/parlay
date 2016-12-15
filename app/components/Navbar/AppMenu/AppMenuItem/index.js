@@ -1,7 +1,7 @@
 import React from 'react';
-import FontAwesome from 'react-fontawesome';
 import classNames from 'classnames';
 import { Link } from 'react-router';
+import Icon from '../../../Icon';
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +27,7 @@ const AppMenuItem = ({ label, icon, url, className }) => (
                 'text-center',
             )}
         >
-            <FontAwesome
+            <Icon
                 name={icon}
                 className={classNames(
                     'md-24',
