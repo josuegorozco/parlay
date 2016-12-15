@@ -2,6 +2,7 @@ import express from 'express'; /* eslint-disable no-console, import/no-extraneou
 import cors from 'cors';
 import path from 'path';
 import open from 'open';
+import favicon from 'serve-favicon';
 import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
@@ -20,6 +21,7 @@ const middleware = webpackDevMiddleware(compiler, {
 app.use(cors());
 app.use(middleware);
 app.use(webpackHotMiddleware(compiler));
+app.use(favicon(path.join(__dirname, '../app/favicon.ico')));
 
 // ------------------------------------------------------
 // Since webpackDevMiddleware uses memory-fs internally to store build
