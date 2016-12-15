@@ -5,8 +5,12 @@ import NotificationItem from '../index';
 
 describe('<NotificationItem />', () => {
     it('should render div component', () => {
+        const timestamp = new Date().toUTCString();
         const renderedComponent = shallow(
-            <NotificationItem />
+            <NotificationItem
+                message="Test"
+                timestamp={timestamp}
+            />
         );
 
         expect(renderedComponent.find('li').length).toEqual(1);
