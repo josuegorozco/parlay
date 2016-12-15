@@ -2,6 +2,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router';
+import logo from './logo.png';
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ const Brand = () => (
             'primary',
         )}
     >
+        <img src={logo} width="24" height="24" alt="" />
         <span
             className={classNames(
                 'hidden-folded',
