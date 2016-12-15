@@ -99,3 +99,27 @@ sup {
         float: none !important;
     }
 }
+
+/*
+|--------------------------------------------------------------------------
+| Left / Right
+|--------------------------------------------------------------------------
+|
+| Provide left/right properties:
+|
+| r-60 => right: 60px
+| r-n-60 => right: -60px;
+|
+*/
+
+@each $prop, $abbrev in (left: l, right: r) {
+    @each $size, $lengths in $spacers {
+        .#{$abbrev}-#{$size} {
+            #{$prop}: #{$size}px !important;
+        }
+
+        .#{$abbrev}-n-#{$size} {
+            #{$prop}: -#{$size}px !important;
+        }
+    }
+}

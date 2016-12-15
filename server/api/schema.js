@@ -11,11 +11,11 @@ export const schema = {
                     id: {
                         type: 'number',
                         unique: true,
-                        minimum: 1
+                        minimum: 1,
                     },
                     firstName: {
                         type: 'string',
-                        faker: 'name.firstName'
+                        faker: 'name.firstName',
                     },
                     lastName: {
                         type: 'string',
@@ -24,11 +24,39 @@ export const schema = {
                     email: {
                         type: 'string',
                         faker: 'internet.email',
-                    }
+                    },
                 },
-                required: ['id', 'firstName', 'lastName', 'email']
-            }
-        }
+                required: ['id', 'firstName', 'lastName', 'email'],
+            },
+        },
+        notifications: {
+            type: 'array',
+            minItems: 3,
+            maxItems: 5,
+            items: {
+                type: 'object',
+                properties: {
+                    id: {
+                        type: 'number',
+                        unique: true,
+                        minimum: 1,
+                    },
+                    img: {
+                        type: 'image',
+                        faker: 'internet.avatar',
+                    },
+                    message: {
+                        type: 'string',
+                        faker: 'lorem.sentence',
+                    },
+                    timestamp: {
+                        type: 'string',
+                        faker: 'date.recent',
+                    },
+                },
+                required: ['id', 'img', 'message', 'timestamp'],
+            },
+        },
     },
-    required: ['users']
+    required: ['users', 'notifications'],
 };
