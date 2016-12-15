@@ -11,7 +11,7 @@ import profile from './profile.png';
 |
 */
 
-const Avatar = ({ img = profile, size = 32, onlineStatus = 'off', borderColor = 'b-white', displayLocation = 'left', showStatus = true }) => {
+const Avatar = ({ img = profile, size = 32, onlineStatus = 'off', borderColor = 'b-white', displayLocation = 'right', showStatus = true }) => {
     const status = showStatus ? (
         <i
             className={classNames(
