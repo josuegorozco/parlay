@@ -137,3 +137,9 @@
     clear: left;
     padding-bottom: 1rem;
 }
+
+@media (max-width: 767px) {
+    .navbar-toggleable-sm .navbar-nav {
+        padding-top: 0.5rem !important;
+    }
+}
