@@ -10,27 +10,27 @@
 export default [{
     id: 1,
     label: 'Inbox',
-    icon: 'envelope',
+    icon: 'mail',
     className: 'b-r b-b',
 }, {
     id: 2,
     label: 'Contacts',
-    icon: 'users',
+    icon: 'supervisor_account',
     className: 'b-r b-b',
 }, {
     id: 3,
     label: 'Calendar',
-    icon: 'calendar',
+    icon: 'event',
     className: 'b-b',
 }, {
     id: 4,
     label: 'Notes',
-    icon: 'pencil',
+    icon: 'note_add',
     className: 'b-r',
 }, {
     id: 5,
     label: 'To-do',
-    icon: 'list-ul',
+    icon: 'playlist_add_check',
     className: 'b-r',
 }, {
     id: 6,
