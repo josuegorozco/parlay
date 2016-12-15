@@ -1,6 +1,6 @@
 {
   "name": "parlay",
-  "version": "1.2.3",
+  "version": "2.0.0",
   "description": "Boilerplate",
   "scripts": {
     "security-check": "nsp check",
