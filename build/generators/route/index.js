@@ -50,7 +50,7 @@ function sagasExists(comp) {
  * @returns {string}
  */
 function trimTemplateFile(template) {
-    return fs.readFileSync(`internals/generators/route/${template}`, 'utf8').replace(/\s*$/, '');
+    return fs.readFileSync(`build/generators/route/${template}`, 'utf8').replace(/\s*$/, '');
 }
 
 module.exports = {
