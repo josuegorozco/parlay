@@ -172,6 +172,7 @@
     "react-addons-test-utils": "^15.4.1",
     "rimraf": "^2.5.4",
     "sass-loader": "^4.1.0",
+    "sinon": "^1.17.6",
     "style-loader": "^0.13.1",
     "stylefmt": "^5.0.2",
     "stylelint": "^7.6.0",
