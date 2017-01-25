@@ -1,8 +1,6 @@
 # React Boiler Plate  
 
-A highly scalable foundation with the best DX and a focus on performance and best practices.  
-
-<hr />  
+> A highly scalable foundation with the best DX and a focus on performance and best practices.  
 
 Build on the latest tech stacks:  
 
@@ -17,7 +15,8 @@ Deliver high quality code with:
 1. Install latest version of Nodejs: [https://nodejs.org/en/download/current/](https://nodejs.org/en/download/current/)
 2. Install latest version of npm: ```npm install -g npm@latest```
 3. Install dependencies: ```npm install```
-4. Launch dev environment: ```npm start```
+4. Launch dev environment: ```npm start```  
+
 
 # Contribution Guidelines
 ### Writing Tests
@@ -33,6 +32,7 @@ Code reviews are performed internally by team members. Each PR should meet the f
 - [ ] Review the code primarily for anti-patterns, edge cases, and accurate business logic.  
 - [ ] Review the code for cleanliness and coding standards.  
 - [ ] All comments resolved  
+
 
 # About
 
