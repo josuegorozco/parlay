@@ -6,11 +6,11 @@ A highly scalable foundation with the best DX and a focus on performance and bes
 
 Build on the latest tech stacks:  
 
-<img src=“app/assets/images/logos/stacks.png” alt=“Tech Stacks” width=“100%” height=“78” />  
+<img src="app/assets/images/logos/stacks.png" alt="Tech Stacks" width="100%" height="78" />  
 
 Deliver high quality code with:  
 
-<img src="app/assets/images/logos/tests.png” alt=“Test Frameworks“ width=“100%” height=“78” />  
+<img src="app/assets/images/logos/tests.png" alt="Test Frameworks" width="100%" height="78" />  
 
 # Quick Start
 
