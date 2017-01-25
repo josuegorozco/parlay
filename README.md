@@ -2,6 +2,8 @@
 
 > A highly scalable foundation with the best DX and a focus on performance and best practices.  
 
+<br />
+
 Build on the latest tech stacks:  
 
 <img src="app/assets/images/logos/stacks.png" alt="Tech Stacks" width="100%" height="78" />  
@@ -10,6 +12,8 @@ Deliver high quality code with:
 
 <img src="app/assets/images/logos/tests.png" alt="Test Frameworks" width="100%" height="78" />  
 
+<br />
+
 # Quick Start
 
 1. Install latest version of Nodejs: [https://nodejs.org/en/download/current/](https://nodejs.org/en/download/current/)
@@ -17,6 +21,7 @@ Deliver high quality code with:
 3. Install dependencies: ```npm install```
 4. Launch dev environment: ```npm start```  
 
+<br />
 
 # Contribution Guidelines
 ### Writing Tests
@@ -24,7 +29,7 @@ Unit tests are written in [mochajs](https://mochajs.org/), with [expect](https:/
 
 ### Code Reviews
 Code reviews are performed internally by team members. Each PR should meet the following checklist/guidelines:  
-<hr />
+<hr style="height: 1px;" />
 - [ ] Commits reference a JIRA ticket  
 - [ ] Code is associated with only one top level JIRA ticket  
 - [ ] Pull, run, and test the code locally. Attempt to find edge cases or unrelated code that may have broken  
@@ -33,6 +38,7 @@ Code reviews are performed internally by team members. Each PR should meet the f
 - [ ] Review the code for cleanliness and coding standards.  
 - [ ] All comments resolved  
 
+<br />
 
 # About
 
