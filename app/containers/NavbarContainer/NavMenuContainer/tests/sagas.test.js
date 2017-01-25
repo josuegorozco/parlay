@@ -1,5 +1,5 @@
 import expect from 'expect';
-import { call, put, take } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { REQUEST_NAV_MENU } from '../constants';
 import { fetchNavMenu, fetchNavMenuFromServer, fetchNavMenuSaga } from '../sagas';
 import { requestNavMenuFailed, requestNavMenuSucceeded } from '../actions';
@@ -20,7 +20,7 @@ describe('fetchNavMenuSaga', () => {
     it('should watch for REQUEST_NAV_MENU', () => {
         const takeDescriptor = generator.next().value;
 
-        expect(takeDescriptor).toEqual(take(REQUEST_NAV_MENU));
+        expect(takeDescriptor).toEqual(takeLatest(REQUEST_NAV_MENU, fetchNavMenu));
     });
 });
 

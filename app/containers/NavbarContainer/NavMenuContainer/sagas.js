@@ -1,5 +1,4 @@
-import { call, put } from 'redux-saga/effects';
-import { takeLatest } from 'redux-saga';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { REQUEST_NAV_MENU } from './constants';
 import { requestNavMenuSucceeded, requestNavMenuFailed } from './actions';
 import response from './data/menu';
@@ -30,7 +29,7 @@ export function* fetchNavMenu() {
 }
 
 export function* fetchNavMenuSaga() {
-    yield* takeLatest(REQUEST_NAV_MENU, fetchNavMenu);
+    yield takeLatest(REQUEST_NAV_MENU, fetchNavMenu);
 }
 
 /*

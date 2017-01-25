@@ -1,5 +1,4 @@
-import { call, put } from 'redux-saga/effects';
-import { takeLatest } from 'redux-saga';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { REQUEST_APP_MENU } from './constants';
 import { requestAppMenuSucceeded, requestAppMenuFailed } from './actions';
 import response from './data/menu';
@@ -30,7 +29,7 @@ export function* fetchAppMenu() {
 }
 
 export function* fetchAppMenuSaga() {
-    yield* takeLatest(REQUEST_APP_MENU, fetchAppMenu);
+    yield takeLatest(REQUEST_APP_MENU, fetchAppMenu);
 }
 
 /*
