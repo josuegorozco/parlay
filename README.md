@@ -1,17 +1,39 @@
 # React Boiler Plate  
 
-<p class="lead">
-    A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices.
-</p>
+A highly scalable foundation with the best DX and a focus on performance and best practices.  
 
----  
+<hr />  
 
-<p>
-    Build on the latest tech stacks:
-</p>
+Build on the latest tech stacks:  
 
-<img src="app/assets/images/logos/bootstrap4.png" alt="Bootstrap 4" width="56" height="56" style="width:56px; height:56px; line-height:56px; display:inline-block; text-align:center; vertical-align:middle; border-style:none;" /> <img src="app/assets/images/logos/react.png" alt="React" width="56" height="56" style="width:56px; height:56px; line-height:56px; display:inline-block; text-align:center; vertical-align:middle; border-style:none;" /> <img src="app/assets/images/logos/redux.png" alt="Redux" width="56" height="56" style="width:56px; height:56px; line-height:56px; display:inline-block; text-align:center; vertical-align:middle; border-style:none;" /> <img src="app/assets/images/logos/html5.png" alt="HTML5" width="56" height="56" style="width:56px; height:56px; line-height:56px; display:inline-block; text-align:center; vertical-align:middle; border-style:none;" /> <img src="app/assets/images/logos/css3.png" alt="CSS 3" width="56" height="56" style="width:56px; height:56px; line-height:56px; display:inline-block; text-align:center; vertical-align:middle; border-style:none;" /> <img src="app/assets/images/logos/sass.png" alt="SASS" width="56" height="56" style="width:56px; height:56px; line-height:56px; display:inline-block; text-align:center; vertical-align:middle; border-style:none;" /> <img src="app/assets/images/logos/webpack.png" alt="Webpack" width="56" height="56" style="width:56px; height:56px; line-height:56px; display:inline-block; text-align:center; vertical-align:middle; border-style:none;" /> <img src="app/assets/images/logos/js.jpg" alt="Javascript" width="56" height="56" style="width:56px; height:56px; line-height:56px; display:inline-block; text-align:center; vertical-align:middle; border-style:none;" /> <img src="app/assets/images/logos/nodejs.png" alt="Nodejs" width="90" height="55.13" /> <img src="app/assets/images/logos/npm.png" alt="NPM" width="90" height="35" class="w-xs" /> <img src="app/assets/images/logos/express.png" width="120" height="36.38" alt="Express" class="w-sm" />
+<img src=“app/assets/images/logos/stacks.png” alt=“Tech Stacks” width=“100%” height=“78” />  
 
 Deliver high quality code with:  
 
-<img src="app/assets/images/logos/eslint.png" alt="ESLint" width="56" height="56" style="width:56px; height:56px; line-height:56px; display:inline-block; text-align:center; vertical-align:middle; border-style:none;" /> <img src="app/assets/images/logos/mocha.png" alt="Mocha" width="56" height="56" style="width:56px; height:56px; line-height:56px; display:inline-block; text-align:center; vertical-align:middle; border-style:none;" /> <img src="app/assets/images/logos/chai.png" alt="Chai" width="56" height="56" style="width:56px; height:56px; line-height:56px; display:inline-block; text-align:center; vertical-align:middle; border-style:none;" /> <img src="app/assets/images/logos/karma.png" alt="Karma" width="120" height="27.91" /> <img src="app/assets/images/logos/babel.png" alt="Babel" width="90" height="36.38" /> Sinon.JS expect enzyme
+<img src="app/assets/images/logos/tests.png” alt=“Test Frameworks“ width=“100%” height=“78” />  
+
+# Quick Start
+
+1. Install latest version of Nodejs: [https://nodejs.org/en/download/current/](https://nodejs.org/en/download/current/)
+2. Install latest version of npm: ```npm install -g npm@latest```
+3. Install dependencies: ```npm install```
+4. Launch dev environment: ```npm start```
+
+# Contribution Guidelines
+### Writing Tests
+Unit tests are written in [mochajs](https://mochajs.org/), with [expect](https://github.com/mjackson/expect), [sinon](http://sinonjs.org/) assertion libraries and run via [karma](https://karma-runner.github.io/1.0/index.html)
+
+### Code Reviews
+Code reviews are performed internally by team members. Each PR should meet the following checklist/guidelines:  
+<hr />
+- [ ] Commits reference a JIRA ticket  
+- [ ] Code is associated with only one top level JIRA ticket  
+- [ ] Pull, run, and test the code locally. Attempt to find edge cases or unrelated code that may have broken  
+- [ ] Run linting, build, and unit tests if this is done by CI  
+- [ ] Review the code primarily for anti-patterns, edge cases, and accurate business logic.  
+- [ ] Review the code for cleanliness and coding standards.  
+- [ ] All comments resolved  
+
+# About
+
+This is a fork of [https://github.com/mxstbr/react-boilerplate.](https://github.com/mxstbr/react-boilerplate) with modified support for singleton sagas.
