@@ -1,5 +1,4 @@
-import { call, put } from 'redux-saga/effects';
-import { takeLatest } from 'redux-saga';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { REQUEST_NOTIFICATIONS } from './constants';
 import { requestNotificationsSucceeded, requestNotificationsFailed } from './actions';
 
@@ -27,7 +26,7 @@ export function* fetchNotifications() {
 }
 
 export function* fetchNotificationsSaga() {
-    yield* takeLatest(REQUEST_NOTIFICATIONS, fetchNotifications);
+    yield takeLatest(REQUEST_NOTIFICATIONS, fetchNotifications);
 }
 
 /*

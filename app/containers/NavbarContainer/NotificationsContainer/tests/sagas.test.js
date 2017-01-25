@@ -1,5 +1,5 @@
 import expect from 'expect';
-import { call, put, take } from 'redux-saga/effects';
+import { call, put, takeLatest } from 'redux-saga/effects';
 import { REQUEST_NOTIFICATIONS } from '../constants';
 import { fetchNotifications, fetchNotificationsFromServer, fetchNotificationsSaga } from '../sagas';
 import { requestNotificationsFailed, requestNotificationsSucceeded } from '../actions';
@@ -26,7 +26,7 @@ describe('fetchNotificationsSaga', () => {
     it('should watch for REQUEST_NOTIFICATIONS', () => {
         const takeDescriptor = generator.next().value;
 
-        expect(takeDescriptor).toEqual(take(REQUEST_NOTIFICATIONS));
+        expect(takeDescriptor).toEqual(takeLatest(REQUEST_NOTIFICATIONS, fetchNotifications));
     });
 });
 

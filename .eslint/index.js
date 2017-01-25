@@ -54,6 +54,7 @@ module.exports = {
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         'react/jsx-filename-extension': 0,
+        'react/jsx-tag-spacing': 0,
     },
     globals: {
         '__DEV__': true,
